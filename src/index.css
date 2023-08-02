@@ -14,12 +14,19 @@ code {
 /* HEADER */
 .my-active{
   color: black;
+  transition: all .5s;
 }
-.my-active:hover{
+a.text-dark{
+  transition: all .5s;
+}
+a.text-dark:hover, .my-active:hover{
   color: red !important;
 }
+.header-content{
+  font-size: 18px;
+}
 .movie{
-    height: 113vh;
+    height: 103vh;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
@@ -37,7 +44,9 @@ code {
 .carousel-indicators .active{
   background-color: rgb(255, 87, 21);
 }
-/* LIST-HEADER LichChieu */
+
+
+/* LIST-HEADER LỊCH CHIẾU */
 .titleLichChieu{
   position: relative;
   background-color: white;
@@ -79,4 +88,23 @@ code {
 }
 .headerTitle .under-line:hover::after{
   transform: scaleX(1);
+}
+/* FOOTER LỊCH CHIẾU */
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: #fb4226 !important;
+}
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 15px !important;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: .5 !important;
+  color: #fb4226 !important;
 }

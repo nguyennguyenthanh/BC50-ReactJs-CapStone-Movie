@@ -14,8 +14,8 @@ export default class Navbar extends Component {
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
             </button>
-            <nav className="navbar navbar-expand-sm">
-              <ul className="navbar-nav">
+            <nav className="navbar navbar-expand-sm header-content">
+              <ul className="navbar-nav ">
                 <li className="nav-item mx-3 font-weight-bold">
                   <NavLink className={({ isActive }) => isActive ? "my-active nav-link" : "nav-link text-dark"} to="/">Lịch Chiếu</NavLink>
                 </li>
@@ -30,7 +30,7 @@ export default class Navbar extends Component {
                 </li>
               </ul>
             </nav>
-            <div className='d-flex'>
+            <div className='d-flex header-content'>
               <a className="nav-link active text-dark" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <div>
                   <i className="fa-solid fa-xl fa-user mr-2" />Đăng Nhập

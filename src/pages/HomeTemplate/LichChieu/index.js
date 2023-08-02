@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-import LichChieuItem from './LichChieuItem';
+import LichChieuItem from "./LichChieuItem";
+import Slider from "react-slick";
+import Swal from 'sweetalert2';
 
 export default class LichChieu extends Component {
   constructor(props) {
@@ -46,10 +48,26 @@ export default class LichChieu extends Component {
 
   renderListLichChieu = () => {
     const { data } = this.state;
-    return data?.map((movie) => <LichChieuItem key={movie.maPhim} movie={movie} />)
+    return data?.map((movie) => <div><LichChieuItem key={movie.maPhim} movie={movie} /></div>)
   }
-
+  handlePopUp = () => {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Do you want to continue',
+      icon: 'error',
+      confirmButtonText: 'Cool'
+    })
+  }
   render() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      slidesToShow: 1,
+      speed: 500,
+      rows: 2,
+      slidesPerRow: 4,
+      arrows: false,
+    };
     return (
       <div className='container'>
         <div className="headerTitle titleLichChieu">
@@ -82,12 +100,19 @@ export default class LichChieu extends Component {
             </div>
             <div className='col-md-3 partition'>
               {/* dùng sweet alert để hiện box */}
-              <button className="btnMuaVe">MUA VÉ NGAY</button>
+              <button className="btnMuaVe" onClick={() => {
+                this.handlePopUp()
+              }}>MUA VÉ NGAY</button>
+
             </div>
           </div>
         </div>
-        <div className="row">
+        <Slider {...settings}>
           {this.renderListLichChieu()}
+        </Slider>
+        <br />
+        <div className='container mt-3'>
+          <img src="./images/shadow.png" alt="" width={1080}/>
         </div>
       </div>
     )
